@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<!-- Experience-->
+<section class="resume-section" id="experience">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Experience</h2>
+        {% for exp in experiences %}
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">{{ exp.nomExperience }}</h3>
+                <div class="subheading mb-3">{{ exp.entrepriseExperience }}</div>
+                <p>{{ exp.descriptifExperience }}</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">{{ exp.dateDebutExperience|date("m/d/Y") }} - {{ exp.dateFinExperience|date("m/d/Y") }}</span></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<hr class="m-0" />
+{% endblock %}

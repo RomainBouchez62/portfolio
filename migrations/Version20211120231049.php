@@ -1,0 +1,31 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DoctrineMigrations;
+
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
+
+/**
+ * Auto-generated Migration: Please modify to your needs!
+ */
+final class Version20211120231049 extends AbstractMigration
+{
+    public function getDescription(): string
+    {
+        return 'Création de l\'entité Diplome';
+    }
+
+    public function up(Schema $schema): void
+    {
+        // this up() migration is auto-generated, please modify it to your needs
+        $this->addSql('CREATE TABLE diplome (id INT AUTO_INCREMENT NOT NULL, nom_diplome VARCHAR(255) NOT NULL, descriptif_diplome LONGTEXT NOT NULL, ecole_diplome VARCHAR(255) NOT NULL, date_obtention_diplome DATETIME NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+    }
+
+    public function down(Schema $schema): void
+    {
+        // this down() migration is auto-generated, please modify it to your needs
+        $this->addSql('DROP TABLE diplome');
+    }
+}

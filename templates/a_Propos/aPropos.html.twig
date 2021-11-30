@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <!-- About-->
+    <section class="resume-section" id="about">
+
+        <div class="resume-section-content">
+
+            {% for user in users %}
+                <h1 class="mb-0">
+                    {{ user.prenomUser }}
+                    <span class="text-primary">{{ user.nomUser }}</span>
+                </h1>
+                <div class="subheading mb-5">
+                    <a href="mailto:name@email.com">{{ user.email }}</a>
+                </div>
+                <p class="lead mb-5">Bonjour, <br> Jeune, motivé, autodidacte et passionné j'apprécie développer des applications web et logiciels répondant aux besoins précis du client. Ceci est mon portfolio, et présente l'ensemble des mes compétences et projets sur lesquels j'ai pu travaillé depuis la fin de mes études. Bonne visite ! </p>
+                <div class="social-icons">
+                    <a class="social-icon" href="{{ user.linkedinUser }}"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="social-icon" href="{{ user.githubUser }}"><i class="fab fa-github"></i></a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <hr class="m-0" />
+{% endblock %}
