@@ -38,6 +38,11 @@ class Projet
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slugProjet;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +92,18 @@ class Projet
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getSlugProjet(): ?string
+    {
+        return $this->slugProjet;
+    }
+
+    public function setSlugProjet(string $slugProjet): self
+    {
+        $this->slugProjet = $slugProjet;
 
         return $this;
     }
