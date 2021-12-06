@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Diplome;
 use App\Entity\Experience;
+use App\Entity\Projet;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -64,6 +65,18 @@ class AppFixtures extends Fixture
                 ->setEcoleDiplome($faker->words(1,true))
                 ->setUser($user);
             $manager->persist($Diplome);
+        }
+
+        //Création de projet
+        for ($i=0;$i<10; $i++)
+        {
+            $Projet =new Projet();
+            $Projet->setNomProjet($faker->words(5,true))
+                ->setDescriptionProjet($faker->text(350))
+                ->setLienProjet("https://github.com/RomainBouchez62/portfolio")
+                ->setSlugProjet($faker->slug())
+            ->setUser($user);
+            $manager->persist($Projet);
         }
 
         $manager->flush();
