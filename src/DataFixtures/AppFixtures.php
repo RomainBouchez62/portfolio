@@ -75,7 +75,7 @@ class AppFixtures extends Fixture
                 ->setDescriptionProjet($faker->text(350))
                 ->setLienProjet("https://github.com/RomainBouchez62/portfolio")
                 ->setSlugProjet($faker->slug())
-            ->setUser($user);
+                ->setUser($user);
             $manager->persist($Projet);
         }
 

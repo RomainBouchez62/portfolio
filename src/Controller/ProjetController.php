@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Projet;
 use App\Repository\ProjetRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,30 +15,32 @@ class ProjetController extends AbstractController
     /**
      * @Route("/projets", name="projets")
      */
-    public function index(ProjetRepository $projetRepository): Response
+    public function index(
+        ProjetRepository $projetRepository,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response
     {
+        $data= $projetRepository->findAll();
+        $projets=$paginator->paginate(
+            $data, /* Requête */
+            $request->query->getInt('page',1), /* Numéro de la page*/
+            4 /*Limite par page */
+        );
         return $this->render('projets/projets.html.twig', [
-            'projets' => $projetRepository->findAll(),
+            'projets' => $projets,
         ]);
     }
 
     /**
-     * @Route("/projet/{slug}-{id}", name="projet.show", requirements={"slug":"[a-z0-9\-]*"})
+     * @Route("/projet/{slugProjet}", name="projetshow", requirements={"slugProjet":"[a-z0-9\-]*"})
      * @param Projet $Projet
-     * @param string $slug
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-//    public function show(Projet $Projet, string $slug)
-//    {
-//        if($Projet->getSlugProjet() !== $slug){
-//            return $this->redirectToRoute('projet.show',[
-//                'id'=>$Projet->getId(),
-//                'slug'=>$Projet->getSlugProjet()
-//            ],301);
-//        }
-//
-//        return $this->redirectToRoute('projets/_show_projet.html.twig',[
-//            'projet'=>$Projet
-//        ]);
-//    }
+    public function show(Projet $Projet): Response
+    {
+        return $this->render('projets/_show_projet.html.twig',[
+            'projet'=>$Projet
+        ]);
+    }
 }

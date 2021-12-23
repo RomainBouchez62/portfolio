@@ -1,22 +1,33 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <!-- Education-->
-<section class="resume-section" id="education">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Projets</h2>
-        {% for projet in projets %}
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="flex-grow-1">
-                    {#<a href="{{ path('projet.show', {slug: projet.slugProjet, id: projet.id}) }}">#}
-                    <a href="">
-                        <h3 class="mb-0">{{ projet.nomProjet }}</h3>
-                    </a>
-                    <div>{{ projet.descriptionProjet }}</div>
-                </div>
-
+    <div class="container mt-5">
+    <h2 class="mb-5">Projets</h2>
+    {% for projet in projets %}
+        <div class="row align-items-center">
+            <div class="col-sm-2">
+                <img class="img-fluid img-profile mx-auto mb-2" src="{{ asset('design/img/vide.jpg') }}">
             </div>
-        {% endfor %}
+            <div class="col-sm-8">
+                <a href="{{ path('projetshow', {'slugProjet': projet.slugProjet}) }}">
+                    <h3 class="mb-0">{{ projet.nomProjet }}</h3>
+                </a>
+                <p>{{ projet.descriptionProjet|u.truncate(400,'...',false) }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+
+                    <h3 class="mb-0"></h3>
+
+                <p></p>
+            </div>
+        </div>
+    {% endfor %}
     </div>
-</section>
-<hr class="m-0" />
+    <div class="d-flex justify-content-center">
+        {#{% do projets.setPageRange(2) %}#}
+        {{ knp_pagination_render(projets, 'projets/pagination.html.twig') }}
+    </div>
+{#<hr class="m-0" />#}
 {% endblock %}

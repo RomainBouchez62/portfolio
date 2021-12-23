@@ -18,7 +18,11 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
         <!-- Core theme CSS (includes Bootstrap)-->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+        </style>
         <link href="{{ asset('design/css/surcharge_css.css') }}" rel="stylesheet" />
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}

@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>TEST</h1>
-    <p>{{ projet.descriptionProjet }}</p>
+
+    <div class="container mt-5">
+        <h2 class="mb-5">{{ projet.nomProjet }}</h2>
+            <div class="row">
+                <p>{{ projet.descriptionProjet }}</p>
+            </div>
+    </div>
 {% endblock %}
