@@ -25,7 +25,7 @@ class ExperienceController extends AbstractController
         $experiences=$paginator->paginate(
             $data, /* Requête */
             $request->query->getInt('page',1), /* Numéro de la page*/
-            4 /*Limite par page */
+            3 /*Limite par page */
         );
         return $this->render('experience/experiences.html.twig', [
             'experiences' => $experiences,

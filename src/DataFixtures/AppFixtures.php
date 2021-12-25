@@ -33,7 +33,7 @@ class AppFixtures extends Fixture
             ->setPrenomUser('Romain')
             ->setNomUser('Bouchez')
             ->setDateNaissanceUser($DDN)
-            ->setGithubUser("http")
+            ->setGithubUser("https://github.com/RomainBouchez62")
             ->setLinkedinUser('https://www.linkedin.com/in/romain-bouchez-678a1015a/');
 
         $password = $this->encoder->encodePassword($user,'password');

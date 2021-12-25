@@ -19,6 +19,13 @@ class DiplomeRepository extends ServiceEntityRepository
         parent::__construct($registry, Diplome::class);
     }
 
+
+    public function findByOrder(){
+        return $this->createQueryBuilder('Order')
+            ->orderBy('DESC')
+            ->getQuery()
+            ->getResult();
+    }
     // /**
     //  * @return Diplome[] Returns an array of Diplome objects
     //  */

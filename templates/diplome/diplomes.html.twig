@@ -1,20 +1,24 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <!-- Education-->
-<section class="resume-section" id="education">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Diplômes</h2>
+<div class="container">
+    <div class="row align-items-center">
+        <h2 class="mt-5">Diplômes</h2>
         {% for diplome in diplomes %}
-        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-                <h3 class="mb-0">{{ diplome.ecoleDiplome }}</h3>
-                <div class="subheading mb-3">{{ diplome.nomDiplome }}</div>
-                <div>{{ diplome.descriptifDiplome }}</div>
+        <div class="row mb-5">
+            <div class="col-10">
+                <div class="subheading flex-grow-1">
+                    <h3 class="mb-0">{{ diplome.ecoleDiplome }}</h3>
+                    <div class="subheading mb-3">{{ diplome.nomDiplome }}</div>
+                    <div>{{ diplome.descriptifDiplome }}</div>
+                </div>
             </div>
-            <div class="flex-shrink-0"><span class="text-primary">{{ diplome.dateObtentionDiplome|date("m/d/Y") }}</span></div>
+            <div class="col-2">
+                <div class="flex-shrink-0"><span class="text-primary">{{ diplome.dateObtentionDiplome|date("d/m/Y") }}</span></div>
+            </div>
         </div>
         {% endfor %}
     </div>
+</div>
 </section>
-<hr class="m-0" />
 {% endblock %}

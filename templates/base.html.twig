@@ -11,23 +11,22 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
         <!-- Core theme CSS (includes Bootstrap)-->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-        </style>
         <link href="{{ asset('design/css/surcharge_css.css') }}" rel="stylesheet" />
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
+    {#<body style="background-image:url('{{asset('design/img/fond.png')}}')">#}
+    <body style="background-image:url('{{asset('design/img/fond_large.jpg')}}'); background-repeat: no-repeat; background-size: cover;">
         {% include 'nav.html.twig' %}
         {% block body %}
 

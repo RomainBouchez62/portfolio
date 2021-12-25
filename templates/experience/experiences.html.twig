@@ -4,34 +4,25 @@
     <div class="container mt-5">
         <h2 class="mb-5">Expériences</h2>
     {% for exp in experiences %}
-        <div class="row">
-            <div class="col-10">
+        <div class="experiences row mt-5">
+            <div class=" col-10">
                 <h3 class="mb-0">{{ exp.nomExperience }}</h3>
-                <div class="subheading mb-3">{{ exp.entrepriseExperience }}</div>
-                <p>{{ exp.descriptifExperience }}</p>
+                <hr>
+                <div class="subheading mb-3">
+                    <p><i>-> {{ exp.entrepriseExperience }}</i></p>
+
+                    <p>{{ exp.descriptifExperience }}</p>
+                </div>
+
             </div>
-            <div class="col-2 d-flex align-items-start"><span class="text-primary">{{ exp.dateDebutExperience|date("m/d/Y") }} - {{ exp.dateFinExperience|date("m/d/Y") }}</span></div>
+            <div class="col-2 d-flex align-items-start">
+                <span class="text-primary">{{ exp.dateDebutExperience|date("d/m/Y") }} - {{ exp.dateFinExperience|date("d/m/Y") }}</span>
+            </div>
         </div>
     {% endfor %}
     </div>
-{#<section class="resume-section" id="experience">#}
-    {#<div class="resume-section-content">#}
-        {#<h2 class="mb-5">Experience</h2>#}
-
-        {#<div class="d-flex flex-column flex-md-row justify-content-between mb-5">#}
-            {#<div class="flex-grow-1">#}
-                {#<h3 class="mb-0">{{ exp.nomExperience }}</h3>#}
-                {#<div class="subheading mb-3">{{ exp.entrepriseExperience }}</div>#}
-                {#<p>{{ exp.descriptifExperience }}</p>#}
-            {#</div>#}
-            {#<div class="flex-shrink-0"><span class="text-primary">{{ exp.dateDebutExperience|date("m/d/Y") }} - {{ exp.dateFinExperience|date("m/d/Y") }}</span></div>#}
-        {#</div>#}
-
-    {#</div>#}
-{#</section>#}
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-3">
         {#{% do projets.setPageRange(2) %}#}
         {{ knp_pagination_render(experiences, 'experience/pagination.html.twig') }}
     </div>
-<hr class="m-0" />
 {% endblock %}
