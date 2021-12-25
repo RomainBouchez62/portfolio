@@ -28,10 +28,12 @@ class AppFixtures extends Fixture
         //Création d'un user
         $user = new User();
         $DDN = new \DateTime('19970903');
+        $roles = array('ROLE_ADMIN');
 
         $user->setEmail('romainbouchez62@gmail.com')
             ->setPrenomUser('Romain')
             ->setNomUser('Bouchez')
+            ->setRoles($roles)
             ->setDateNaissanceUser($DDN)
             ->setGithubUser("https://github.com/RomainBouchez62")
             ->setLinkedinUser('https://www.linkedin.com/in/romain-bouchez-678a1015a/');
