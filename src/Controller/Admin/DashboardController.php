@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Diplome;
+use App\Entity\Experience;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -29,5 +30,6 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Diplômes', 'fas fa-graduation-cap', Diplome::class);
+        yield MenuItem::linkToCrud('Expériences', 'fas fa-align-justify', Experience::class);
     }
 }

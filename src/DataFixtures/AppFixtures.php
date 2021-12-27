@@ -52,8 +52,7 @@ class AppFixtures extends Fixture
                 ->setEntrepriseExperience($faker -> words(2,true))
                 ->setDescriptifExperience($faker->text(50))
                 ->setDateDebutExperience(new \DateTime($faker ->date($format = 'Y-m-d', $max = 'now')))
-                ->setDateFinExperience(new \DateTime($faker -> date($format = 'Y-m-d', $max = 'now')))
-                ->setUser($user);
+                ->setDateFinExperience(new \DateTime($faker -> date($format = 'Y-m-d', $max = 'now')));
             $manager->persist($Experience);
         }
 

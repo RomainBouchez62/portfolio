@@ -42,12 +42,6 @@ class Experience
      */
     private $dateFinExperience;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="experiences")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $User;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -109,18 +103,6 @@ class Experience
     public function setDateFinExperience(?\DateTimeInterface $dateFinExperience): self
     {
         $this->dateFinExperience = $dateFinExperience;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->User;
-    }
-
-    public function setUser(?User $User): self
-    {
-        $this->User = $User;
 
         return $this;
     }
