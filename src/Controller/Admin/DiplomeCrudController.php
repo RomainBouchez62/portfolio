@@ -3,7 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Diplome;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 
 class DiplomeCrudController extends AbstractCrudController
 {
@@ -12,14 +15,19 @@ class DiplomeCrudController extends AbstractCrudController
         return Diplome::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('nomDiplome','Nom'),
+            TextField::new('descriptifDiplome','Descriptif'),
+            TextField::new('ecoleDiplome','Ecole'),
+            DateField::new('dateObtentionDiplome','Date d\'obtention'),
         ];
     }
-    */
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setDefaultSort(['dateObtentionDiplome' => 'DESC']);
+    }
 }

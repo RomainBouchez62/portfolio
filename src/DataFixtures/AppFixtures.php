@@ -64,8 +64,7 @@ class AppFixtures extends Fixture
             $Diplome->setNomDiplome($faker->words(2,true))
                 ->setDescriptifDiplome($faker->text(150))
                 ->setDateObtentionDiplome(new \DateTime($faker->date($format = 'Y-m-d', $max = 'now')))
-                ->setEcoleDiplome($faker->words(1,true))
-                ->setUser($user);
+                ->setEcoleDiplome($faker->words(1,true));
             $manager->persist($Diplome);
         }
 

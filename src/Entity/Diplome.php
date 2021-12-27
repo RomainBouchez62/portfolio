@@ -37,12 +37,6 @@ class Diplome
      */
     private $dateObtentionDiplome;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="diplomes")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $User;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -96,15 +90,4 @@ class Diplome
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->User;
-    }
-
-    public function setUser(?User $User): self
-    {
-        $this->User = $User;
-
-        return $this;
-    }
 }
