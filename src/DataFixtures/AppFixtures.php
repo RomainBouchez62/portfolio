@@ -2,11 +2,13 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Competence;
 use App\Entity\Diplome;
 use App\Entity\Experience;
 use App\Entity\Projet;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -72,13 +74,25 @@ class AppFixtures extends Fixture
         {
             $Projet =new Projet();
             $Projet->setNomProjet($faker->words(5,true))
-                ->setDescriptionProjet($faker->text(350))
-                ->setLienProjet("https://github.com/RomainBouchez62/portfolio")
-                ->setSlugProjet($faker->slug())
-                ->setUser($user);
+                    ->setDescriptionProjet($faker->text(350))
+                    ->setLienProjet("https://github.com/RomainBouchez62/portfolio")
+                    ->setSlugProjet($faker->slug())
+                    ->setUser($user);
             $manager->persist($Projet);
         }
 
+        //Création de compétences
+        $tabImgComp=['/imgCompetences/css.jpg','/imgCompetences/html.jpg','/imgCompetences/windev.jpg','/imgCompetences/wordpress.jpg'];
+        $tabNivComp = ['débutant','intermédiaire','confirmé'];
+
+        for ($i=0; $i<5;$i++)
+        {
+            $Competence = new Competence();
+            $Competence->setNomCompetence($faker->word(1))
+                        ->setNiveauCompetence($tabNivComp[array_rand($tabNivComp,1)])
+                        ->setFileCompetence($tabImgComp[array_rand($tabImgComp,1)]);
+            $manager->persist($Competence);
+        }
         $manager->flush();
     }
 }
