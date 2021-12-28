@@ -33,12 +33,6 @@ class Projet
     private $lienProjet;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="projet")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $user;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $slugProjet;
@@ -80,18 +74,6 @@ class Projet
     public function setLienProjet(string $lienProjet): self
     {
         $this->lienProjet = $lienProjet;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
 
         return $this;
     }
