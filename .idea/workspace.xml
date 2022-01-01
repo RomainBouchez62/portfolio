@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d3371e-379a-44ad-b281-6315543f75aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Controller/DiplomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiplomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ExperienceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ExperienceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ExperienceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ExperienceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/portfolio_sf/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,11 +73,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/DiplomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="396">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="596">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -130,7 +136,6 @@
         <option value="$PROJECT_DIR$/templates/competence/competences.html.twig" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Entity/Projet.php" />
@@ -143,6 +148,7 @@
         <option value="$PROJECT_DIR$/src/Controller/ExperienceController.php" />
         <option value="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/DiplomeController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -365,6 +371,23 @@
             <path>
               <item name="Portfolio_SF" type="b2602c69:ProjectViewProjectNode" />
               <item name="Portfolio_SF" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="projets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Portfolio_SF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Portfolio_SF" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="projets" type="462c0819:PsiDirectoryNode" />
+              <item name="miniatures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Portfolio_SF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Portfolio_SF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -499,12 +522,12 @@
       <workItem from="1640721095251" duration="7865000" />
       <workItem from="1640729286633" duration="514000" />
       <workItem from="1640774520102" duration="7566000" />
-      <workItem from="1641047764142" duration="15777000" />
+      <workItem from="1641047764142" duration="15871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148378000" />
+    <option name="totallyTimeSpent" value="148472000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -791,13 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/uploads/images/competences/competence.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -896,8 +912,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DiplomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="396">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
         </state>
       </provider>
     </entry>
