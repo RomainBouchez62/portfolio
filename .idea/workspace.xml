@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5d3371e-379a-44ad-b281-6315543f75aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/competences/competences.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CompetenceCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CompetenceCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProjetCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProjetCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DiplomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DiplomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ExperienceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ExperienceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Event Subscriber/EasyAdminSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Event Subscriber/EasyAdminSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ExperienceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ExperienceRepository.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/portfolio_sf/node_modules/" />
@@ -53,25 +50,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/CompetenceCrudController.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/ExperienceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
-              <caret line="54" column="98" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
-              <folding>
-                <element signature="e#40#66#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CompetenceController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-              <folding>
-                <element signature="e#34#74#0#PHP" expanded="true" />
-              </folding>
+            <state>
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -79,41 +61,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Repository/ExperienceRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+            <state relative-caret-position="462">
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/DiplomeRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ExperienceController.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/DiplomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-              <folding>
-                <element signature="e#34#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://8f4ddeb5-601b-4ced-87e5-fbfb65c7091f/schema/portfolio_sf/table/experience">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/ProjetCrudController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-              <folding>
-                <element signature="e#40#62#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="352">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -140,8 +107,6 @@
         <option value="$PROJECT_DIR$/migrations/Version20211205143910.php" />
         <option value="$PROJECT_DIR$/templates/pagination.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/ProjetController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/DiplomeController.php" />
-        <option value="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" />
         <option value="$PROJECT_DIR$/src/Security/AppAuthenticator.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/diplome/diplomes.html.twig" />
@@ -176,6 +141,8 @@
         <option value="$PROJECT_DIR$/src/Controller/CompetenceController.php" />
         <option value="$PROJECT_DIR$/src/Repository/ExperienceRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/ExperienceController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/DiplomeRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/DiplomeController.php" />
       </list>
     </option>
   </component>
@@ -532,12 +499,12 @@
       <workItem from="1640721095251" duration="7865000" />
       <workItem from="1640729286633" duration="514000" />
       <workItem from="1640774520102" duration="7566000" />
-      <workItem from="1641047764142" duration="15145000" />
+      <workItem from="1641047764142" duration="15777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147746000" />
+    <option name="totallyTimeSpent" value="148378000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -604,23 +571,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/nav.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="97" selection-start-line="12" selection-start-column="97" selection-end-line="12" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/experience/experiences.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle/doc/images/easyadmin-full-backend.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/cache.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -902,10 +852,17 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/CompetenceController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
           <folding>
             <element signature="e#34#74#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://8f4ddeb5-601b-4ced-87e5-fbfb65c7091f/schema/portfolio_sf/table/diplome">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -918,18 +875,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ExperienceRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        <state relative-caret-position="462">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ExperienceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-          <folding>
-            <element signature="e#34#74#0#PHP" expanded="true" />
-          </folding>
+        <state>
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/DiplomeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DiplomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -26,22 +26,18 @@ class DiplomeRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    // /**
-    //  * @return Diplome[] Returns an array of Diplome objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return Diplome[] Returns an array of Diplome objects
+      */
+
+    public function findOrderBy()
     {
         return $this->createQueryBuilder('d')
-            ->andWhere('d.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('d.dateObtentionDiplome', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Diplome

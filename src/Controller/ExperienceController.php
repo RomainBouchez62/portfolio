@@ -20,7 +20,7 @@ class ExperienceController extends AbstractController
     ): Response
     {
         //Récupération des données
-        $data = $experienceRepository->findAll();
+        $data = $experienceRepository->findOrderBy();
 
         $experiences=$paginator->paginate(
             $data, /* Requête */

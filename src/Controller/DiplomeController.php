@@ -15,7 +15,7 @@ class DiplomeController extends AbstractController
     public function index(DiplomeRepository $diplomeRepository): Response
     {
         return $this->render('diplome/diplomes.html.twig', [
-            'diplomes' => $diplomeRepository->findAll(),
+            'diplomes' => $diplomeRepository->findOrderBy(),
         ]);
     }
 }
