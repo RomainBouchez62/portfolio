@@ -6,3 +6,8 @@ vich_uploader:
             uri_prefix: '%competences_img%'
             upload_destination: '%kernel.project_dir%/public%competences_img%'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+        projets_miniature:
+            uri_prefix: '%projet_img_miniature%'
+            upload_destination: '%kernel.project_dir%/public%projet_img_miniature%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

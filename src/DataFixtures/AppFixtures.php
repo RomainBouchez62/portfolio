@@ -54,8 +54,8 @@ class AppFixtures extends Fixture
             $Experience->setNomExperience($faker -> words(3,true))
                 ->setEntrepriseExperience($faker -> words(2,true))
                 ->setDescriptifExperience($faker->text(50))
-                ->setDateDebutExperience(new \DateTime($faker ->date($format = 'Y-m-d', $max = 'now')))
-                ->setDateFinExperience(new \DateTime($faker -> date($format = 'Y-m-d', $max = 'now')));
+                ->setDateDebutExperience(new \DateTime($faker ->date($format = 'd-m-Y', $max = 'now')))
+                ->setDateFinExperience(new \DateTime($faker -> date($format = 'd-m-Y', $max = 'now')));
             $manager->persist($Experience);
         }
 
@@ -65,7 +65,7 @@ class AppFixtures extends Fixture
             $Diplome = new Diplome();
             $Diplome->setNomDiplome($faker->words(2,true))
                 ->setDescriptifDiplome($faker->text(150))
-                ->setDateObtentionDiplome(new \DateTime($faker->date($format = 'Y-m-d', $max = 'now')))
+                ->setDateObtentionDiplome(new \DateTime($faker->date($format = 'd-m-Y', $max = 'now')))
                 ->setEcoleDiplome($faker->words(1,true));
             $manager->persist($Diplome);
         }
@@ -77,7 +77,9 @@ class AppFixtures extends Fixture
             $Projet->setNomProjet($faker->words(5,true))
                     ->setDescriptionProjet($faker->text(350))
                     ->setLienProjet("https://github.com/RomainBouchez62/portfolio")
-                    ->setSlugProjet($faker->slug());
+                    ->setSlugProjet($faker->slug())
+                    ->setImage('vide.jpg')
+                    ->setUpdatedAt($faker->dateTimeBetween('-6 month','now'));
             $manager->persist($Projet);
         }
 
