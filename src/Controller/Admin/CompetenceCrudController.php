@@ -52,7 +52,7 @@ class CompetenceCrudController extends AbstractCrudController
         return [
             TextField::new('nomCompetence','Nom'),
             TextField::new('niveauCompetence','Niveau'),
-            TextField::new('imageFile','Image')->setFormType(VichImageType::class)->onlyWhenCreating()->onlyWhenUpdating(),
+            TextField::new('imageFile','Image')->setFormType(VichImageType::class)->onlyOnForms(),
             ImageField::new('image','Image')->setBasePath('/uploads/images/competences/')->onlyOnIndex()
         ];
     }

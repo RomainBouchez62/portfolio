@@ -7,8 +7,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProjetCrudController extends AbstractCrudController
 {
@@ -20,6 +23,7 @@ class ProjetCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
+            ->add(Crud::PAGE_INDEX,Action::DETAIL)
             ->update(Crud::PAGE_INDEX,Action::EDIT,function (Action $action){
                 return $action->setLabel('Modifier');
             })
@@ -49,8 +53,12 @@ class ProjetCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('nomProjet','Nom'),
-            TextEditorField::new('descriptionProjet','Description')
+            TextField::new('nomProjet','Nom : '),
+            SlugField::new('slugProjet','URL du projet : ')->setTargetFieldName('nomProjet'),
+            TextEditorField::new('descriptionProjet','Description : '),
+            TextField::new('lienProjet','Lien du projet : '),
+            TextField::new('imageFile','Image en-tête : ')->setFormType(VichImageType::class)->onlyOnForms(),
+            ImageField::new('image','Image en-tête')->setBasePath('/uploads/images/projets/miniatures/')->onlyOnIndex()
         ];
     }
 }
