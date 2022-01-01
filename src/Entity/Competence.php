@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\CompetenceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=CompetenceRepository::class)
+ * @Vich\Uploadable
  */
 class Competence
 {
@@ -29,8 +32,35 @@ class Competence
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
-    private $fileCompetence;
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="competences", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt(): \DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTime $updatedAt):self
+    {
+        $this->updatedAt = $updatedAt;
+        return $this;
+    }
 
     public function getId(): ?int
     {
@@ -61,15 +91,32 @@ class Competence
         return $this;
     }
 
-    public function getFileCompetence(): ?string
+    public function setImageFile(File $image = null)
     {
-        return $this->fileCompetence;
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
-    public function setFileCompetence(string $fileCompetence): self
+    public function getImageFile()
     {
-        $this->fileCompetence = $fileCompetence;
+        return $this->imageFile;
+    }
 
+    public function setImage($image):self
+    {
+        $this->image = $image;
         return $this;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 }

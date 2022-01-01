@@ -11,6 +11,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Faker\Provider\DateTime;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
@@ -76,13 +77,11 @@ class AppFixtures extends Fixture
             $Projet->setNomProjet($faker->words(5,true))
                     ->setDescriptionProjet($faker->text(350))
                     ->setLienProjet("https://github.com/RomainBouchez62/portfolio")
-                    ->setSlugProjet($faker->slug())
-                    ->setUser($user);
+                    ->setSlugProjet($faker->slug());
             $manager->persist($Projet);
         }
 
         //Création de compétences
-        $tabImgComp=['/imgCompetences/css.jpg','/imgCompetences/html.jpg','/imgCompetences/windev.jpg','/imgCompetences/wordpress.jpg'];
         $tabNivComp = ['débutant','intermédiaire','confirmé'];
 
         for ($i=0; $i<5;$i++)
@@ -90,7 +89,8 @@ class AppFixtures extends Fixture
             $Competence = new Competence();
             $Competence->setNomCompetence($faker->word(1))
                         ->setNiveauCompetence($tabNivComp[array_rand($tabNivComp,1)])
-                        ->setFileCompetence($tabImgComp[array_rand($tabImgComp,1)]);
+                        ->setImage('competence.jpg')
+                        ->setUpdatedAt($faker->dateTimeBetween('-6 month','now'));
             $manager->persist($Competence);
         }
         $manager->flush();

@@ -6,7 +6,7 @@
         {% for comp in competences %}
             <div class="row align-items-center mt-3">
                 <div class="col-sm-2">
-                    <img class="img-fluid img-profile mx-auto mb-2" src="{{ asset(comp.fileCompetence) }}">
+                    <img class="img-fluid img-profile mx-auto mb-2" src="{{ vich_uploader_asset(comp, 'imageFile') }}">
                 </div>
                 <div class="subheading col-sm-8">
                     <h4 class="mb-0">{{ comp.nomCompetence }}</h4>

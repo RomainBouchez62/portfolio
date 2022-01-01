@@ -7,7 +7,9 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class CompetenceCrudController extends AbstractCrudController
 {
@@ -50,7 +52,8 @@ class CompetenceCrudController extends AbstractCrudController
         return [
             TextField::new('nomCompetence','Nom'),
             TextField::new('niveauCompetence','Niveau'),
-            TextField::new('fileCompetence','Fichier')
+            TextField::new('imageFile','Image')->setFormType(VichImageType::class)->onlyWhenCreating()->onlyWhenUpdating(),
+            ImageField::new('image','Image')->setBasePath('/uploads/images/competences/')->onlyOnIndex()
         ];
     }
 
