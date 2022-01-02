@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Competence;
 use App\Entity\Diplome;
 use App\Entity\Experience;
+use App\Entity\Image;
 use App\Entity\Projet;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -80,8 +81,36 @@ class AppFixtures extends Fixture
                     ->setSlugProjet($faker->slug())
                     ->setImage('vide.jpg')
                     ->setUpdatedAt($faker->dateTimeBetween('-6 month','now'));
+
+            for ($j=0;$j<3;$j++)
+            {
+                $tabImag=['/design/img/slide1.jpg','/design/img/slide2.jpg','/design/img/slide3.jpg'];
+                $Image = new Image();
+                $Image->setImage($tabImag[$j])
+                    ->setUpdatedAt(new \DateTime('now'))
+                    ->setProjet($Projet);
+
+                $manager->persist($Image);
+            }
+
             $manager->persist($Projet);
         }
+
+        //Liaison d'image aux projets créés
+//            for ($i=0;$i<3;$i++)
+//            {
+//
+//                        $Pro = new Projet();
+//
+//                        $tabImag=['/design/img/slide1.jpg','/design/img/slide2.jpg','/design/img/slide3.jpg'];
+//                        $Image = new Image();
+//                        $Image->setImage($tabImag[$i])
+//                            ->setUpdatedAt(new \DateTime('now'))
+//                            ->setProjet();
+//
+//                        $manager->persist($Image);
+//            }
+
 
         //Création de compétences
         $tabNivComp = ['débutant','intermédiaire','confirmé'];
