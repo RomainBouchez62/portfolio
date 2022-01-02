@@ -6,6 +6,7 @@
 parameters:
     competences_img: /uploads/images/competences
     projet_img_miniature: /uploads/images/projets/miniatures
+    projet_img: /uploads/images/projets/
 
 services:
     # default configuration for services in *this* file
