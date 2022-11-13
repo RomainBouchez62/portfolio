@@ -13,13 +13,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use Faker\Provider\DateTime;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
 {
     private $encoder;
 
-    public function __construct(UserPasswordEncoderInterface $encoder)
+    public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder=$encoder;
     }
@@ -42,7 +43,7 @@ class AppFixtures extends Fixture
             ->setGithubUser("https://github.com/RomainBouchez62")
             ->setLinkedinUser('https://www.linkedin.com/in/romain-bouchez-678a1015a/');
 
-        $password = $this->encoder->encodePassword($user,'password');
+        $password = $this->encoder->hashPassword($user,'password');
 
         $user->setPassword($password);
 

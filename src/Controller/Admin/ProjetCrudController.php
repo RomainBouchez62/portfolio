@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Projet;
+use App\Form\ImagesType;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -58,7 +60,17 @@ class ProjetCrudController extends AbstractCrudController
             TextEditorField::new('descriptionProjet','Description : '),
             TextField::new('lienProjet','Lien du projet : '),
             TextField::new('imageFile','Image en-tête : ')->setFormType(VichImageType::class)->onlyOnForms(),
-            ImageField::new('image','Image en-tête')->setBasePath('/uploads/images/projets/miniatures/')->onlyOnIndex()
+            ImageField::new('image','Image en-tête')
+                ->setUploadDir('/uploads/images/projets/miniatures/')
+                ->setBasePath('/uploads/images/projets/miniatures/')
+                ->onlyOnIndex()
+                ->onlyOnDetail(),
+            CollectionField::new('images','Image')
+                ->setEntryType(ImagesType::class)
+                ->onlyOnForms(),
+            CollectionField::new('images','Image')
+                ->setTemplatePath('projets/images.html.twig')
+                ->onlyOnDetail()
         ];
     }
 }

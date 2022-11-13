@@ -61,7 +61,7 @@ class Projet
     private $updatedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="projet")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="projet", cascade={"persist"})
      */
     private $images;
 
